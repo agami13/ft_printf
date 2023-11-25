@@ -6,24 +6,24 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:33:11 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 02:43:14 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/25 02:47:04 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static unsigned int	len(unsigned long long n)
-{
-	unsigned long long	len;
+// static unsigned int	len(unsigned long long n)
+// {
+// 	unsigned long long	len;
 
-	len = 0;
-	while (n > 0)
-	{
-		n /= 16;
-		len++;
-	}
-	return (len);
-}
+// 	len = 0;
+// 	while (n > 0)
+// 	{
+// 		n /= 16;
+// 		len++;
+// 	}
+// 	return (len);
+// }
 
 void	ft_printhex(unsigned long long n, char c)
 {

@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 02:43:41 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 02:43:49 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/25 03:19:21 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int	format(const char input, va_list list)
 	else if (input == 'u')
 		ft_putunbr(va_arg(list, unsigned int));
 	else if (input == 'x' || input == 'X')
-		ft_printhex(va_arg(list, unsigned long), input);
+		ft_printhex(va_arg(list, unsigned long long), input);
 	else if (input == 'p')
-		ft_printptr(va_arg(list, unsigned long long));
+		ft_print_ptr(va_arg(list, unsigned long long));
 	else if (input == '%')
 		ft_putchar('%');
 	return (0);
