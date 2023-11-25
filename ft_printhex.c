@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:33:11 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 06:39:15 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/25 23:32:26 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,13 @@ int	ft_printhex(unsigned long long n, char c)
 	return (len(n));
 }
 
-int	ft_print_ptr(unsigned long long num)
-{
-	if (num == 0)
-	{
-		ft_putstr("0x0");
-		return (3);
-	}
-	ft_putstr("0x");
-	ft_printhex(num, 'x');
-	return (len(num));
-}
+// int	ft_print_ptr(unsigned long long num)
+// {
+// 	if (num == 0)
+// 	{
+// 		ft_putstr("0x0");
+// 		return (3);
+// 	}
+// 	ft_putstr("0x");
+// 	return (ft_printhex(num, 'x'));
+// }

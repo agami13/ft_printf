@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 01:45:05 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 06:30:09 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/25 23:34:36 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_putchar(int c);
 int	ft_putnbr(int n);
 int	ft_printhex(unsigned long long n, const char c);
 int	ft_putunbr(unsigned int n);
-int	ft_print_ptr(unsigned long long n);
+int	ft_putptr(unsigned long n);
 int	ft_printf(const char *input, ...);
 
 #endif

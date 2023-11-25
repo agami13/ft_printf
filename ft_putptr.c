@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 01:44:55 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 08:03:36 by ybouaoud         ###   ########.fr       */
+/*   Created: 2023/11/25 19:09:16 by ybouaoud          #+#    #+#             */
+/*   Updated: 2023/11/25 23:34:28 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(char *str)
+int	ft_putptr(unsigned long num)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-int	ft_putstr(char *str)
-{
-	size_t	i;
-
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-		write(1, &str[i++], 1);
-	return (ft_strlen(str));
+	if (num == 0)
+	{
+		ft_putstr("0x0");
+		return (3);
+	}
+	write(1, "0x", 2);
+	return (ft_printhex(num, 'x'));
 }

@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 02:43:41 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 07:49:15 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/25 23:34:43 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	format(const char input, va_list list)
 	else if (input == 'x' || input == 'X')
 		len += ft_printhex(va_arg(list, unsigned long long), input);
 	else if (input == 'p')
-		len += ft_print_ptr(va_arg(list, unsigned long long));
+		len += ft_putptr(va_arg(list, unsigned long));
 	else if (input == '%')
 		len += ft_putchar('%');
 	return (len);
@@ -42,6 +42,8 @@ int	ft_printf(const char *input, ...)
 
 	i = 0;
 	len = 0;
+	if (!input)
+		return (0);
 	va_start(list, input);
 	while (input[i] != '\0')
 	{
