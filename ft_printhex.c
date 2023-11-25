@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:33:11 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/23 13:00:42 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/24 21:21:56 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,4 @@ void  ft_printhex(int n)
     ft_putchar(str[i]);
     i--;
   }
-}
-
-int main()
-{
-	int test = 123456789ABCDEF;
 }
