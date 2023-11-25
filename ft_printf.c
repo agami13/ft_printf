@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 01:47:51 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 01:48:34 by ybouaoud         ###   ########.fr       */
+/*   Created: 2023/11/25 02:43:41 by ybouaoud          #+#    #+#             */
+/*   Updated: 2023/11/25 02:43:49 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ int	format(const char input, va_list list)
 		ft_putnbr(va_arg(list, int));
 	else if (input == 'u')
 		ft_putunbr(va_arg(list, unsigned int));
-	else if (input == 'p' || input == 'x' || input == 'X')
+	else if (input == 'x' || input == 'X')
 		ft_printhex(va_arg(list, unsigned long), input);
+	else if (input == 'p')
+		ft_printptr(va_arg(list, unsigned long long));
 	else if (input == '%')
 		ft_putchar('%');
 	return (0);

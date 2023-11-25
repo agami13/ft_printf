@@ -6,30 +6,55 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:33:11 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 01:43:31 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/25 02:43:14 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-static void	small_hex(unsigned long n)
+static unsigned int	len(unsigned long long n)
 {
+	unsigned long long	len;
+
+	len = 0;
+	while (n > 0)
+	{
+		n /= 16;
+		len++;
+	}
+	return (len);
 }
 
-static void	big_hex(unsigned long n)
+void	ft_printhex(unsigned long long n, char c)
 {
+	if (n == 0)
+		ft_putchar('0');
+	if (n >= 16)
+	{
+		ft_printhex(n / 16, c);
+		ft_printhex(n % 16, c);
+	}
+	else
+	{
+		if (n <= 9)
+			ft_putchar(n + '0');
+		else
+		{
+			if (c == 'x')
+				ft_putchar((n - 10 + 'a'));
+			if (c == 'X')
+				ft_putchar((n - 10 + 'A'));
+		}
+	}
 }
 
-static void	print_address(unsigned long n)
+void	ft_print_ptr(unsigned long long num)
 {
-}
-
-void	ft_printhex(unsigned long n, char c)
-{
-	if (c == 'x')
-		small_hex(n);
-	else if (c == 'X')
-		big_hex(n);
-	else if (c == 'p')
-		print_address(n);
+	if (num == 0)
+	{
+		ft_putstr("0x0");
+		return ;
+	}
+	ft_putstr("0x");
+	ft_printhex(num, 'x');
 }
