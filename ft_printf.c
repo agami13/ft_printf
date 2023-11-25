@@ -6,14 +6,17 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 02:43:41 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 06:41:55 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/25 07:49:15 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	format(const char input, va_list list, int len)
+int	format(const char input, va_list list)
 {
+	int	len;
+
+	len = 0;
 	if (input == 'c')
 		len += ft_putchar(va_arg(list, int));
 	else if (input == 's')
@@ -44,7 +47,7 @@ int	ft_printf(const char *input, ...)
 	{
 		if (input[i] == '%')
 		{
-			len += format(input[i + 1], list, len);
+			len += format(input[i + 1], list);
 			i++;
 		}
 		else
@@ -62,7 +65,8 @@ int	ft_printf(const char *input, ...)
 // // 	int num = -123456789;
 
 // // 	ft_printf("ahem : [%s]\n\t[%c]\n\t[%d]\n\t[%%]", test, testo, num);
-// // 	printf("\n\n\n\n\n\n\nahem : [%s]\n\t[%c]\n\t[%d]\n\t[%%]\n", test, testo,
+// // 	printf("\n\n\n\n\n\n\nahem : [%s]\n\t[%c]\n\t[%d]\n\t[%%]\n", test,
+			// testo,
 // // num);
 // 	int c = 12345;
 // 	int d = -678910;
