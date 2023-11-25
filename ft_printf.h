@@ -6,7 +6,7 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 01:45:05 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 02:53:09 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/25 06:30:09 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 # include <unistd.h>
 
 // prototypes begin
-void	ft_putstr(char *str);
-void	ft_putchar(int c);
-void	ft_putnbr(int n);
-void	ft_printhex(unsigned long long n, const char c);
-void	ft_putunbr(unsigned int n);
-void	ft_print_ptr(unsigned long long n);
-int		ft_printf(const char *input, ...);
+int	ft_putstr(char *str);
+int	ft_putchar(int c);
+int	ft_putnbr(int n);
+int	ft_printhex(unsigned long long n, const char c);
+int	ft_putunbr(unsigned int n);
+int	ft_print_ptr(unsigned long long n);
+int	ft_printf(const char *input, ...);
 
 #endif

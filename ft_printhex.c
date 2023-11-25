@@ -6,26 +6,26 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:33:11 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 02:47:04 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/25 06:39:15 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// static unsigned int	len(unsigned long long n)
-// {
-// 	unsigned long long	len;
+static unsigned int	len(unsigned long long n)
+{
+	unsigned long long	len;
 
-// 	len = 0;
-// 	while (n > 0)
-// 	{
-// 		n /= 16;
-// 		len++;
-// 	}
-// 	return (len);
-// }
+	len = 0;
+	while (n > 0)
+	{
+		n /= 16;
+		len++;
+	}
+	return (len);
+}
 
-void	ft_printhex(unsigned long long n, char c)
+int	ft_printhex(unsigned long long n, char c)
 {
 	if (n == 0)
 		ft_putchar('0');
@@ -46,15 +46,17 @@ void	ft_printhex(unsigned long long n, char c)
 				ft_putchar((n - 10 + 'A'));
 		}
 	}
+	return (len(n));
 }
 
-void	ft_print_ptr(unsigned long long num)
+int	ft_print_ptr(unsigned long long num)
 {
 	if (num == 0)
 	{
 		ft_putstr("0x0");
-		return ;
+		return (3);
 	}
 	ft_putstr("0x");
 	ft_printhex(num, 'x');
+	return (len(num));
 }

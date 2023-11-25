@@ -6,13 +6,31 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 01:45:13 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 01:45:14 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/25 06:40:16 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putunbr(unsigned int n)
+static int	num_len(unsigned int n)
+{
+	int	len;
+
+	len = 0;
+	if (n <= 0)
+	{
+		len++;
+		n *= -1;
+	}
+	while (n > 0)
+	{
+		n /= 10;
+		len++;
+	}
+	return (len);
+}
+
+int	ft_putunbr(unsigned int n)
 {
 	long	nbr;
 	char	str[10];
@@ -32,4 +50,5 @@ void	ft_putunbr(unsigned int n)
 		ft_putchar(str[i]);
 		i--;
 	}
+	return (num_len(n));
 }

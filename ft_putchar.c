@@ -6,13 +6,14 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 01:45:00 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 01:45:01 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/25 06:31:56 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putchar(int c)
+int	ft_putchar(int c)
 {
 	write(1, &c, 1);
+	return (1);
 }
