@@ -6,36 +6,30 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:33:11 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/24 21:21:56 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/25 01:43:31 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void  ft_printhex(int n)
-{
-  long  nbr;
-  char  str[17];
-  int   i;
+#include "printf.h"
 
-  i = 0;
-  nbr = n;
-  if(nbr < 0)
-  {
-    ft_putchar('-');
-    nbr *= -1;
-  }
-  if(nbr > 10)
-  {
-    while(nbr > 10)
-    {
-      str[i] = (nbr % 16) + '0';
-      nbr /= 16;
-      i++;
-    }
-  }
-  str[i] = nbr + '0';
-  while(i >= 0)
-  {
-    ft_putchar(str[i]);
-    i--;
-  }
+static void	small_hex(unsigned long n)
+{
+}
+
+static void	big_hex(unsigned long n)
+{
+}
+
+static void	print_address(unsigned long n)
+{
+}
+
+void	ft_printhex(unsigned long n, char c)
+{
+	if (c == 'x')
+		small_hex(n);
+	else if (c == 'X')
+		big_hex(n);
+	else if (c == 'p')
+		print_address(n);
 }
