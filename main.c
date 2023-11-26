@@ -1,4 +1,5 @@
 #include "ft_printf.h"
+#include<limits.h> 
 
 int	main(void)
 {
@@ -21,5 +22,9 @@ int	main(void)
 
 	int testi = 1234;
 	int rso = ft_printf("\n\nfour %d", testi);
-	ft_printf("\n%d", rso);
+	ft_printf("\n%d\n\n\n\n\n", rso);
+	ft_printf("%x\n", 4294967295);
+	printf("%lx", 4294967295);
+	printf("\n%ld", 4294967295);
+
 }
