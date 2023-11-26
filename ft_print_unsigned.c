@@ -6,13 +6,13 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 01:45:13 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 06:40:16 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/25 23:43:54 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	num_len(unsigned int n)
+static int	num_len(long n)
 {
 	int	len;
 
