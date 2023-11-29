@@ -6,13 +6,13 @@
 /*   By: ybouaoud <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 01:44:55 by ybouaoud          #+#    #+#             */
-/*   Updated: 2023/11/25 08:03:36 by ybouaoud         ###   ########.fr       */
+/*   Updated: 2023/11/29 10:00:29 by ybouaoud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(char *str)
+static int	ft_strlen(char *str)
 {
 	int	i;
 
@@ -24,12 +24,18 @@ int	ft_strlen(char *str)
 
 int	ft_putstr(char *str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	if (!str)
-		return (0);
-	while (str[i])
-		write(1, &str[i++], 1);
+	{
+		write (1, "(null)", 6);
+		return (6);
+	}
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 	return (ft_strlen(str));
 }

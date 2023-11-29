@@ -19,10 +19,10 @@ int	ft_putptr(size_t num)
 	rs = 0;
 	if (num == 0)
 	{
-		ft_putstr("0");
-		return (3);
+		ft_putstr("(nil)");
+		return (5);
 	}
 	ft_putstr("0x");
-	rs = ft_printhex(num, 16,'x') + 2;
+	rs = ft_printhex(num, 16, 'x') + 2;
 	return (rs);
 }
